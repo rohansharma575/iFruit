@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iFruit 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   
+    
+</head>
+<body>
+    
+    <div class="container">
+        <div id="myHeader">
+        <header >
+            <div class="logo-img">
+             <a href="index.html">iFruit</a>
+            </div>
+         
+            <nav>
+                <a href="Contact.html"  class="nav-content">Contact</a>
+                <a href="About.html"  class="nav-content">About</a>
+                <a href="Map.html" class="nav-button">Find a Store</a>
+
+            </nav>
+        </header>
+    </div>
+        <main>
+            <section class="hero">
+                <img src="images/ifruit-text.png" id="ifruit-text" class="ifruit-img" alt="ifruit">
+                <img src="images/hero-iphone.png" id="ifruit-phone" class="hero-img" alt="iFruit 1">
+              
+         </section>
+         <div class="display-container">
+        <section class="display">
+           
+            <div class="left-col-display" data-aos="fade-right">
+                <h1>World-Class Display</h1>
+                <p>Dynamic Amoled 2X</p>
+                <p>Eye Comfort Shield</p>
+                <p>Super Smooth 120hz Display</p>
+            </div>
+            <div class="right-col-display" data-aos="fade-up">
+                <img src="images/Display-phone.png" class="display-img" alt="Display-phone">
+            </div>
+        </section>
+    </div>
+        <div class="design-container">
+        <section class="design">
+            <div class="left-col-design" data-aos="fade-up">
+                <img src="images/design-phone.png" class="design-img" alt="Design-phone">
+            </div>
+            <div class="right-col-design" data-aos="fade-left">
+                <h1> Designed to turn heads.</h1>
+                <p> Built with Ceramic Shield, tougher than any smartphone glass</p>
+            </div>
+          
+        </section>
+    </div>
+  
+        <section class="camera" >
+            <canvas id="c" width="1990" height="900"></canvas>
+            
+        </section>  
+        <section class="camera-container">
+        <section class="best-camera" >
+            <h1 data-aos="fade-up"> BEST CAMERA IN THE SEGMENT</h1>
+            <p data-aos="fade-up"> -Barques Mrownlee</p>
+
+        </section>
+    </section>
+    <section class="selfie-container">
+        <section class="selfie">
+           
+            <div class="left-col-selfie" data-aos="fade-right">
+                <img src="images/selfie-1.jpg" class="selfie-img" alt="Design-phone">
+            </div>
+            <div class="right-col-selfie" data-aos="fade-left">
+                <h1> Selfie. Set. Go.</h1>
+                <p> 16 MP selfie camera for stunning, 
+                    social-ready selfies.</p>
+            </div>
+            
+        </section>
+    </section>
+    <div class="battery-container">
+        <section class="battery">
+            <div class="left-col-bat" data-aos="fade-right">
+                <h1>All-day battery.</h1>
+                <p>iFruit 1 's Adaptive Battery learns which apps are your favourite and reduces power to the ones that you rarely use.</p>
+
+            </div>
+            <div class="right-col-bat" data-aos="fade-left">
+                <img src="images/battery.png" alt="battery">
+            </div>
+        </section>
+    </div>
+
+    <div class="five-container">
+        <section class="five"> 
+            <div class="left-col-5g" data-aos="fade-right">
+                <img src="images/5g.png" alt="5g">
+            </div>
+            <div class="right-col-5g" data-aos="fade-left">
+                <h1>5G Ready</h1>
+                <p>HyperFast 5G lets you download a whole season of your favorite show in a flash. The 5G-compatible chipset delivers faster speeds to keep you connected as you upload or download.</p>
+
+            </div>
+        </section>
+    </div>
+        <section class="buy-now">
+            <a href="https://www.amazon.in/mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles_9292c6cb7b394d30b2467b8f631090a7" target="_blank" class="mybutton">Buy Now</a>
+
+        </section>
+        </main>  
+        <footer>
+            <h1> ©iFruit inc. 2021</h1>
+            <a href="About.html">About</a>
+            <a href="support.html">Contact</a>
+
+
+        </footer>
+    </div>
+    <script>
+        window.onscroll = function() {stick()};
+
+
+var header = document.getElementById("myHeader");
+
+var sticky = header.offsetTop;
+
+
+function stick() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+    </script>
+
+    <script>
+    
+        var ctx = c.getContext("2d"),
+        img = new Image();         // image to show
+
+        img.onload = start;
+        img.src = "images/exposure-2.png";
+
+        function start() {
+        c.onmousemove = function(e) {
+        var r = c.getBoundingClientRect(),
+        x = e.clientX - r.left;
+        ctx.clearRect(0, 0, c.width, c.height); 
+        ctx.drawImage(img, 0, 0, x, c.height,  0, 0, x, c.height); 
+        ctx.fillRect(x, 0, 5, c.height); 
+  };
+}
+   
+
+
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset:400,
+          duration: 1000
+      });
+    </script>
+    <script type="text/javascript">
+  
+        let bruh= document.getElementById("ifruit-text");
+        let phone= document.getElementById("ifruit-phone");
+        let bg= document.getElementById("star-bg");
+       
+        window.addEventListener('scroll', function(){
+            var value= window.scrollY;
+
+            bruh.style.top  = value * 0.7 + 'px';
+            phone.style.top  = -value * 0.5 + 'px';
+            bg.style.top  = -value * 0.5 + 'px';
+            
+        
+        })
+    
+
+    </script>
+</body>
+</html>

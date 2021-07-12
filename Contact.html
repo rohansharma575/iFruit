@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Connect with iFruit</title>
+    <link rel="stylesheet" href="header.css">
+</head>
+<style>
+    
+    html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+body{
+    margin:0px;
+    padding:0px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    font-family: open sans;
+    
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.header-container{
+    background-color: rgb(22, 22, 22);
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+
+main{
+    margin: 0 auto;
+    max-width: 1024px;
+    width: 100%;
+   
+}    
+.mail{
+    align-content: center;
+    margin: 0 auto;
+    
+
+}
+
+.mail-img{
+    margin-left: 7rem;
+}
+
+
+main h1{
+   
+    text-align: center;
+    color: white;
+    font-size: 5rem;
+
+}
+
+.mail-container{
+    display:flex;
+}
+
+.mail-bruh{
+    flex: 1;
+}
+
+.mail-form{
+    flex: 1;
+    margin:auto;
+}
+
+
+main p{
+    text-align: left;
+    color: white;
+    font-size: 2rem;
+   font-weight: bold;
+  
+
+}
+
+.inputwrapper {
+    margin-bottom: 20px;
+}
+
+label{
+    
+    text-align: left;
+    color: white;
+    font-size: 1.5rem;
+
+}
+
+footer{
+    margin-top: 9rem; 
+    min-height: 150px;
+    background-color: rgb(22, 22, 22);
+    text-align: center;
+    color: white;
+}
+
+footer h1{
+    padding-top: 2rem;
+}
+
+footer a{
+    padding: 5px 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.btnSubmit{
+    margin-top: 1rem;
+    text-decoration: none;
+    background-color: white;
+    color: rgb(22, 22, 22);
+    padding: 0.8rem 1.6rem;
+    border-radius: 1.8rem;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.228);
+    font-weight: bold;
+}
+
+.btnSubmit:hover{
+    background-color: rgb(226, 88, 101);
+    color: white;
+    transition-duration: 0.5s;
+}
+
+
+
+.form-input {
+  color: #333;
+  font-size: 1.2rem;
+	margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+
+/* .form-input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+} */
+
+
+</style>
+<body>
+    <div class="header-container">
+    <header>
+        <div class="logo-img">
+            <a href="index.html">iFruit</a>
+           </div>
+        <nav>
+            <a href="Map.html"  class="nav-content">Find a store</a>
+            <a href="About.html"  class="nav-content">About</a>
+            <a href="https://www.amazon.in/mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles_9292c6cb7b394d30b2467b8f631090a7" target="_blank" class="nav-button">Buy now</a>
+
+        </nav>
+    </header>
+</div>
+
+    <main>
+        <div class="mail">
+           
+
+            <h1>Contact Us</h1>
+            <img src="images/Contact-us-img.png" class="mail-img" alt="image">
+            <div class="mail-container">
+             <div class="mail-bruh">
+            <p>Do you have any questions? Please do not hesitate to contact us directly.</p>
+        </div>
+        <div class="mail-form">
+            <form id="MyForm" name="MyForm">
+                <div class="inputwrapper">
+                 
+                    <input type="text" name="name" id="name" class="form-input" placeholder="Name">
+                </div>
+
+                <div class="inputwrapper">
+                   
+                    <input type="email" name="email" id="email" class="form-input" placeholder="Email">
+                </div>
+
+                <div class="inputwrapper">
+                    <textarea name="message" id="message" cols="100" rows="5" class="form-input" placeholder="Let us know what you think"></textarea>
+
+                    <input type="submit" name="submit" class="btnSubmit" value="Submit" />
+                </div>
+        
+               
+                
+            </form>
+        </div>
+    </div>
+        </div>
+    </main>
+    <footer>
+        <h1> ©iFruit inc. 2021</h1>
+        <a href="About.html">About</a>
+        <a href="support.html">Contact</a>
+
+
+    </footer>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyYzP0j2bkvJr3e_IU3Bjn33mm65xl23yiiU4FB5vgMgXg3GSs/exec'
+        const form = document.forms['MyForm']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for your time! We will contact you soon."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+
+</body>
+</html>
